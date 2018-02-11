@@ -32,16 +32,34 @@ $arr_tasks = array(
 	array(
 		"task" => "Купить корм для кота",
 		"date" => "Нет",
-		"category" => "Домашние дела",
+		"category" => "Домашниe дела",
 		"done" => "Нет",
 	),
 	array(
 		"task" => "Заказать пиццу",
 		"date" => "Нет",
-		"category" => "Домашние дела",
+		"category" => "Домашниe дела",
 		"done" => "Нет",
 	)
 );
+
+
+function count_tasks($arr_tasks, $category) {
+			$count_tasks = 0;
+	foreach ($arr_tasks as $key => $value) {
+		if ($category == "Все") {
+			$count_tasks++;
+		}
+		else if ($value['category'] == $category) {
+			$count_tasks++;
+		}
+	}
+	return $count_tasks;
+}
+
+
+
+
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -89,17 +107,15 @@ $arr_tasks = array(
 						<?php
 							$index = 0;
 							$num = count($arr_projects);
-							$i =0;
 							while ($index < $num) {
 								$project = $arr_projects[$index];
 								?>
-								<li class="main-navigation__list-item <?php if($i == 0) { ?> main-navigation__list-item--active" <?php } ?> >
+								<li class="main-navigation__list-item <?php if($index == 0) { ?> main-navigation__list-item--active <?php } ?> ">
 									<a class="main-navigation__list-item-link" href="#"> <?= $project ?></a>
-									<span class="main-navigation__list-item-count"></span>
+									<span class="main-navigation__list-item-count"> <?= count_tasks($arr_tasks, $project); ?> </span>
 								</li>
 								<?php
 								$index++;
-								$i++;
 							} ?>
 					</ul>
 				</nav>
