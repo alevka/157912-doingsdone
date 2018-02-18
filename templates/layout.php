@@ -49,7 +49,7 @@
 								?>
 								<li class="main-navigation__list-item <?php if($index == 0) { ?> main-navigation__list-item--active <?php } ?> ">
 									<a class="main-navigation__list-item-link" href="#"> <?= $project ?></a>
-									<span class="main-navigation__list-item-count"> <?= count_tasks($arr_tasks, $project); ?> </span>
+									<span class="main-navigation__list-item-count"> <?= count_tasks($parameters['arr_tasks'], $project); ?> </span>
 								</li>
 								<?php
 								$index++;
