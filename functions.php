@@ -25,3 +25,13 @@ function include_template($name_template, $parameters){
 
 }
 
+function date_calculation($date) {
+	$result = false;
+	$curday = time();
+	$date = strtotime($date);
+	$days_remaining = ($date - $curday)/86400;
+	if ($days_remaining <= 1) {
+		$result = true;
+	}
+	return $result;
+}
