@@ -27,7 +27,7 @@
 	<?php if(isset($id_task)) : ?>
 	<!--показывать следующий тег <tr/>, если переменная $show_complete_tasks равна единице-->
 		<?php foreach ($arr_tasks as $key => $value): ?>
-		<tr class="tasks__item task <?php if($value['done'] == "Да"){ print(' task--completed'); } ?> ">
+		<tr class="tasks__item task <?php if($value['done'] == "Да"){ print(' task--completed'); } if(date_calculation($value['date'])) { print(' task--important'); }  ?> ">
 			<td class="task__select">
 				<label class="checkbox task__checkbox">
 					<input class="checkbox__input visually-hidden" type="checkbox" <?php if ($show_complete_tasks == 1) {print('checked');}   ?> >
