@@ -24,4 +24,3 @@ function include_template($name_template, $parameters){
     return $result;
 
 }
-

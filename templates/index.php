@@ -24,6 +24,7 @@
 </div>
 
 <table class="tasks">
+	<?php if(isset($id_task)) : ?>
 	<!--показывать следующий тег <tr/>, если переменная $show_complete_tasks равна единице-->
 		<?php foreach ($arr_tasks as $key => $value): ?>
 		<tr class="tasks__item task <?php if($value['done'] == "Да"){ print(' task--completed'); } ?> ">
@@ -38,4 +39,5 @@
 			<td class="task__controls"><?= $value['done'] ?></td>
 		</tr>
 	<?php endforeach ?>
+	<?php endif ?>
 </table>
