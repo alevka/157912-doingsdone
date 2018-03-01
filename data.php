@@ -5,8 +5,6 @@ $title = 'content';
 
 $arr_projects = ["Все", "Входящие", "Учеба", "Работа", "Домашниe дела", "Авто"];
 
-$id_task = null;
-
 $arr_tasks = array(
 	array(
 		"task" => "Собеседование в IT компании",

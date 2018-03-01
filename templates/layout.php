@@ -48,7 +48,7 @@
 								$project = $arr_projects[$index];
 								?>
 								<li class="main-navigation__list-item <?php if($index == 0) { ?> main-navigation__list-item--active <?php } ?> ">
-									<a class="main-navigation__list-item-link" href="?tab=$arr_projects[$index]"> <?= $project ?></a>
+									<a class="main-navigation__list-item-link" href="?project_id=<?= $index ?>"> <?= $project ?></a>
 									<span class="main-navigation__list-item-count"> <?= count_tasks($parameters['arr_tasks'], $project); ?> </span>
 								</li>
 								<?php
